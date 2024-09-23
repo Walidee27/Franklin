@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>À Propos - Site Web Lourd</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="main.css">
+    <title>À Propos - Site Web Optimisé</title>
+    
+    <!-- Preload du CSS critique -->
+    <link rel="preload" href="styles.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.min.css"></noscript>
+    
+    <!-- Exemple de chargement asynchrone pour CSS non critique -->
+    <!-- <link rel="stylesheet" href="non-critical.css" media="print" onload="this.media='all'"> -->
 </head>
 <body>
     <header>
@@ -16,13 +21,16 @@
         <section>
             <h2>Notre Histoire</h2>
             <p>Ce site a été créé pour démontrer les erreurs d'optimisation web courantes...</p>
+            <!-- Exemple d'image avec width et height -->
+            <img src="images/histoire.jpg" alt="Notre Histoire" width="800" height="600" loading="lazy">
         </section>
     </main>
 
     <footer>
-        <p>© 2024 Site Lourd | Tous droits réservés.</p>
+        <p>© 2024 Site Optimisé | Tous droits réservés.</p>
     </footer>
     
-    <script src="scripts/app.js"></script>
+    <!-- Chargement différé des scripts -->
+    <script defer src="scripts/app.min.js"></script>
 </body>
 </html>
